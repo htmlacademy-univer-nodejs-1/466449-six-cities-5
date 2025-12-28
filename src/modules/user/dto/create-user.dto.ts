@@ -5,9 +5,6 @@ import { UserEnum } from '../../../types/enums/user.enum.js';
 export default class CreateUserDto {
   @IsEmail({}, {message: CreateUserMessages.email.invalidFormat})
   public email!: string;
-
-  @IsString({message: CreateUserMessages.avatarPath.invalidFormat})
-  public avatar?: string;
   
   @IsString({message: CreateUserMessages.name.invalidFormat})
   @Length(1, 15, {message: CreateUserMessages.name.lengthField})
