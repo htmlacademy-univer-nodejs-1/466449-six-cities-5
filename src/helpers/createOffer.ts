@@ -1,9 +1,9 @@
-import {Offer} from '../types/offer.type.js';
-import {User} from '../types/user.type.js';
-import {Coordinates} from '../types/coordinates.type.js';
-import {Conveniences} from '../types/conveniences.enum.js';
-import {Housing} from '../types/housing.enum.js';
-import {City} from '../types/city.enum.js';
+import { Offer } from '../types/offer.type.js';
+import { User } from '../types/user.type.js';
+import { Coordinates } from '../types/coordinates.type.js';
+import { Conveniences } from '../types/enums/conveniences.enum.js';
+import { Housing } from '../types/enums/housing.enum.js';
+import { City } from '../types/enums/city.enum.js';
 
 export function createOffer(offerData: string): Offer {
   const [

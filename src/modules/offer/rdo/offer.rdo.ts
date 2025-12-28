@@ -1,8 +1,8 @@
-import {Expose} from 'class-transformer';
-import {City} from '../../../types/city.enum.js';
-import {Housing} from '../../../types/housing.enum.js';
-import {Conveniences} from '../../../types/conveniences.enum.js';
-import {User} from '../../../types/user.type.js';
+import { Expose } from 'class-transformer';
+import { City } from '../../../types/enums/city.enum.js';
+import { Housing } from '../../../types/enums/housing.enum.js';
+import { Conveniences } from '../../../types/enums/conveniences.enum.js';
+import { User } from '../../../types/user.type.js';
 
 export class OfferRdo {
   @Expose()

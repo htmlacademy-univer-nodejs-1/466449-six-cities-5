@@ -1,8 +1,10 @@
-import typegoose, {defaultClasses, getModelForClass} from '@typegoose/typegoose';
-import {User} from '../../types/user.type.js';
-import {createSHA256} from '../../helpers/createSHA256.js';
-const {prop, modelOptions} = typegoose;
+import typegoose, { defaultClasses, getModelForClass, Ref } from '@typegoose/typegoose';
+import { User } from '../../types/user.type.js';
+import { createSHA256 } from '../../helpers/createSHA256.js';
+import { UserEnum } from '../../types/enums/user.enum.js';
+import { OfferEntity } from '../offer/offer.entity.js';
 
+const {prop, modelOptions} = typegoose;
 // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export interface UserEntity extends defaultClasses.Base {}
 
@@ -42,11 +44,17 @@ export class UserEntity extends defaultClasses.TimeStamps implements User {
     return this.password;
   }
 
-  @prop({required: true})
-  public userType: string;
+  public verifyPassword(password: string, salt: string) {
+    const hashPassword = createSHA256(password, salt);
 
-  @prop({required: true})
-  public favoriteOffers!: string[];
+    return hashPassword === this.password;
+  }
+
+  @prop({required: true, enum: UserEnum})
+  public userType: UserEnum;
+
+  @prop({required: true, ref: 'OfferEntity', default: []})
+  public favoriteOffers!: Ref<OfferEntity>[];
 }
 
 export const UserModel = getModelForClass(UserEntity);

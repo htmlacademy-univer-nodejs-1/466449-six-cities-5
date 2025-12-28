@@ -1,20 +1,20 @@
 import chalk from 'chalk';
-import {Command} from './command.interface.js';
-import {getErrorMessage} from '../../helpers/getErrorMessage.js';
-import {createOffer} from '../../helpers/createOffer.js';
+import { Command } from './command.interface.js';
+import { getErrorMessage } from '../../helpers/getErrorMessage.js';
+import { createOffer } from '../../helpers/createOffer.js';
 import TsvFileReader from '../../libs/file-reader/tsv-file-reader.js';
-import {UserService} from '../../modules/user/user-service.interface.js';
-import {OfferService} from '../../modules/offer/offer-service.interface.js';
-import {DatabaseClient} from '../../database-client/database-client.interface.js';
-import {Logger} from '../../libs/logger/logger.interface.js';
+import { UserService } from '../../modules/user/user-service.interface.js';
+import { OfferService } from '../../modules/offer/offer-service.interface.js';
+import { DatabaseClient } from '../../database-client/database-client.interface.js';
+import { Logger } from '../../libs/logger/logger.interface.js';
 import ConsoleLogger from '../../libs/logger/console.logger.js';
-import {OfferModel} from '../../modules/offer/offer.entity.js';
-import {UserModel} from '../../modules/user/user.entity.js';
+import { OfferModel } from '../../modules/offer/offer.entity.js';
+import { UserModel } from '../../modules/user/user.entity.js';
 import MongoClientService from '../../database-client/mongo.database-client.js';
 import DefaultOfferService from '../../modules/offer/default-offer.service.js';
 import DefaultUserService from '../../modules/user/default-user.service.js';
-import {Offer} from '../../types/offer.type.js';
-import {getMongoURI} from '../../helpers/getMongoURI.js';
+import { Offer } from '../../types/offer.type.js';
+import { getMongoURI } from '../../helpers/getMongoURI.js';
 
 const DEFAULT_DB_PORT = '27017';
 const DEFAULT_USER_PASSWORD = 'test';
@@ -44,7 +44,7 @@ export class ImportCommand implements Command {
 
     await this.offerService.create({
       ...offer,
-      author: user,
+      user: user,
       coordinates: `${offer.coordinates.latitude},${offer.coordinates.longitude}`
     });
   }
