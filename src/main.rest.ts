@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import {Container} from 'inversify';
-import { Component } from './types/component.enum.js';
+import { Component } from './types/enums/component.enum.js';
 import Application from './rest/rest.application.js';
 import {createRestApplicationContainer} from './rest/rest.container.js';
 import {createUserContainer} from './modules/user/user.container.js';

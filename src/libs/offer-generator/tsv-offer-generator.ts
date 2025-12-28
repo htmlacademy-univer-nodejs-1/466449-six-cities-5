@@ -1,13 +1,13 @@
 import dayjs from 'dayjs';
-import {getRandomItem} from '../../helpers/getRandomItem.js';
-import {generateRandomValue} from '../../helpers/generateRandomValue.js';
-import {Housing} from '../../types/housing.enum.js';
-import {City} from '../../types/city.enum.js';
-import {MockServerData} from '../../types/mock-server-data.type.js';
-import {OfferGenerator} from './offer-generator.interface.js';
-import {User} from '../../types/user.type.js';
-import {Conveniences} from '../../types/conveniences.enum.js';
-import {Coordinates} from '../../types/coordinates.type.js';
+import { getRandomItem } from '../../helpers/getRandomItem.js';
+import { generateRandomValue } from '../../helpers/generateRandomValue.js';
+import { Housing } from '../../types/enums/housing.enum.js';
+import { City } from '../../types/enums/city.enum.js';
+import { MockServerData } from '../../types/mock-server-data.type.js';
+import { OfferGenerator } from './offer-generator.interface.js';
+import { User } from '../../types/user.type.js';
+import { Conveniences } from '../../types/enums/conveniences.enum.js';
+import { Coordinates } from '../../types/coordinates.type.js';
 
 const MIN_PRICE = 100;
 const MAX_PRICE = 100000;

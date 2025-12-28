@@ -1,7 +1,7 @@
 import got from 'got';
 import chalk from 'chalk';
-import {Command} from './command.interface.js';
-import {MockServerData} from '../../types/mock-server-data.type.js';
+import { Command } from './command.interface.js';
+import { MockServerData } from '../../types/mock-server-data.type.js';
 import TSVOfferGenerator from '../../libs/offer-generator/tsv-offer-generator.js';
 import TsvFileWriter from '../../libs/file-writer/tsv-file-writer.js';
 

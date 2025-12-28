@@ -1,4 +1,4 @@
-import {generateRandomValue} from './generateRandomValue.js';
+import { generateRandomValue } from './generateRandomValue.js';
 
 export function getRandomItems<T>(items: T[]): T[] {
   const startPosition = generateRandomValue(0, items.length - 1);

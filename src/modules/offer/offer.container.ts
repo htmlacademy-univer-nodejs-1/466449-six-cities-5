@@ -1,11 +1,11 @@
-import {Container} from 'inversify';
-import {types} from '@typegoose/typegoose';
+import { Container } from 'inversify';
+import { types } from '@typegoose/typegoose';
 import DefaultOfferService from './default-offer.service.js';
-import {OfferEntity, OfferModel} from './offer.entity.js';
-import {OfferService} from './offer-service.interface.js';
-import {Component} from '../../types/component.enum.js';
+import { OfferEntity, OfferModel } from './offer.entity.js';
+import { OfferService } from './offer-service.interface.js';
+import { Component } from '../../types/enums/component.enum.js';
 import OfferController from './controller/offer.controller.js';
-import {BaseController} from '../../controller/base-controller.js';
+import { BaseController } from '../../controller/base-controller.js';
 
 export function createOfferContainer() {
   const offerContainer = new Container();
