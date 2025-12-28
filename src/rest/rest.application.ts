@@ -97,7 +97,7 @@ export default class Application {
 
   public async init() {
     this.logger.info('Application init');
-    
+
     await this._initDb();
     await this._initMiddleware();
     await this._initExceptionFilters();

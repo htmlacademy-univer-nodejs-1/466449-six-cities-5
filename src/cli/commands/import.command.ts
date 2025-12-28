@@ -50,7 +50,7 @@ export class ImportCommand implements Command {
 
   private async onLine(line: string, resolve: () => void) {
     const offer = createOffer(line);
-     await this.saveOffer(offer);
+    await this.saveOffer(offer);
     resolve();
   }
 
@@ -60,11 +60,11 @@ export class ImportCommand implements Command {
   }
 
   public async execute(
-    filename: string, 
-    login: string, 
-    password: string, 
-    host: string, 
-    dbname: string, 
+    filename: string,
+    login: string,
+    password: string,
+    host: string,
+    dbname: string,
     salt: string)
     : Promise<void> {
     if (filename === undefined) {

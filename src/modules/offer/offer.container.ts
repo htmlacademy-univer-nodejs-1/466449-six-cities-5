@@ -13,6 +13,6 @@ export function createOfferContainer() {
   offerContainer.bind<OfferService>(Component.OfferService).to(DefaultOfferService);
   offerContainer.bind<types.ModelType<OfferEntity>>(Component.OfferModel).toConstantValue(OfferModel);
   offerContainer.bind<BaseController>(Component.OfferController).to(OfferController).inSingletonScope();
-  
+
   return offerContainer;
 }

@@ -12,6 +12,6 @@ export function CreateCommentContainer() {
   commentContainer.bind<CommentService>(Component.CommentService).to(DefaultCommentService).inSingletonScope();
   commentContainer.bind<types.ModelType<CommentEntity>>(Component.CommentModel).toConstantValue(CommentModel);
   commentContainer.bind<CommentController>(Component.CommentController).to(CommentController).inSingletonScope();
-  
+
   return commentContainer;
 }

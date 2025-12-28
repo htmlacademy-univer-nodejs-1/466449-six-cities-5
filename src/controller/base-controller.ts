@@ -51,7 +51,7 @@ export abstract class BaseController implements Controller {
 
   public send<T>(res: Response, statusCode: number, data: T): void {
     this.addStaticPath(data as UnknownRecord);
-    
+
     res
       .type('application/json')
       .status(statusCode)
