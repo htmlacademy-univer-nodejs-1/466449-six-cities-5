@@ -122,7 +122,7 @@ export default class OfferController extends BaseController {
 
   public async create({body, user}: Request<UnknownRecord, UnknownRecord, CreateOfferDto>, res: Response): Promise<void> {
     const result = await this.offersService.create({...body, userId: user.id});
-    
+
     this.created(res, fillDTO(OfferRdo, result));
   }
 
@@ -130,20 +130,20 @@ export default class OfferController extends BaseController {
     const {offerId} = params;
     const offer = await this.offersService.deleteById(offerId);
     await this.commentService.deleteByOfferId(offerId);
-    
+
     this.noContent(res, offer);
   }
 
   public async update({body, params}: Request<ParamOfferId, UnknownRecord, UpdateOfferDto>, res: Response): Promise<void> {
     const updatedOffer = await this.offersService.updateById(params.offerId, body);
-    
+
     this.ok(res, fillDTO(OfferRdo, updatedOffer));
   }
 
   public async show({params}: Request<ParamOfferId>, res: Response): Promise<void>{
     const {offerId} = params;
     const offer = await this.offersService.findById(offerId);
-    
+
     this.ok(res, fillDTO(OfferRdo, offer));
   }
 
@@ -174,7 +174,7 @@ export default class OfferController extends BaseController {
 
   public async getComments({params}: Request<ParamOfferId, UnknownRecord, UnknownRecord>, res: Response): Promise<void> {
     const comments = await this.commentService.findByOfferId(params.offerId);
-    
+
     this.ok(res, fillDTO(CommentRdo, comments));
   }
 }

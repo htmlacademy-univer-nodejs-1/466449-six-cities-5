@@ -25,6 +25,6 @@ export function createRestApplicationContainer() {
   restApplicationContainer.bind<ExceptionFilterInterface>(Component.HttpErrorExceptionFilter).to(HttpErrorExceptionFilter).inSingletonScope();
   restApplicationContainer.bind<ExceptionFilterInterface>(Component.ValidationExceptionFilter).to(ValidationExceptionFilter).inSingletonScope();
   restApplicationContainer.bind<ExceptionFilterInterface>(Component.BaseExceptionFilter).to(BaseExceptionFilter).inSingletonScope();
-  
+
   return restApplicationContainer;
 }

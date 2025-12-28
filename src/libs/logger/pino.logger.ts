@@ -1,7 +1,6 @@
-import { Logger as PinoInstance, pino } from 'pino';
-import { injectable } from 'inversify';
-import { Logger } from './logger.interface.js';
-
+import {Logger as PinoInstance, pino} from 'pino';
+import {injectable} from 'inversify';
+import {Logger} from './logger.interface.js';
 
 @injectable()
 export default class PinoLogger implements Logger {
@@ -12,19 +11,19 @@ export default class PinoLogger implements Logger {
     this.logger.info('Logger created');
   }
 
-  public debug(message: string, ...args: any[]) {
+  public debug(message: string, ...args: unknown[]) {
     this.logger.debug(message, ...args);
   }
 
-  public error(message: string, ...args: any[]) {
+  public error(message: string, ...args: unknown[]) {
     this.logger.error(message, ...args);
   }
 
-  public info(message: string, ...args: any[]) {
+  public info(message: string, ...args: unknown[]) {
     this.logger.info(message, ...args);
   }
 
-  public warn(message: string, ...args: any[]) {
+  public warn(message: string, ...args: unknown[]) {
     this.logger.warn(message, ...args);
   }
 }

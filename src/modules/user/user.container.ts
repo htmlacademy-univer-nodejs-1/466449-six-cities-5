@@ -13,6 +13,6 @@ export function createUserContainer() {
   userContainer.bind<UserService>(Component.UserService).to(DefaultUserService).inSingletonScope();
   userContainer.bind<types.ModelType<UserEntity>>(Component.UserModel).toConstantValue(UserModel);
   userContainer.bind<BaseController>(Component.UserController).to(UserController).inSingletonScope();
-  
+
   return userContainer;
 }

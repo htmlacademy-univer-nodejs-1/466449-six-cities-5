@@ -16,44 +16,44 @@ import { CreateOfferMessages } from './create-offer.messages.js';
 export default class CreateOfferDto {
   @MinLength(10, {message: CreateOfferMessages.name.minLength})
   @MaxLength(100, {message: CreateOfferMessages.name.maxLength})
-    public name!: string;
+  public name!: string;
 
   @MinLength(20, {message: CreateOfferMessages.name.minLength})
   @MaxLength(1024, {message: CreateOfferMessages.name.maxLength})
-    public description!: string;
+  public description!: string;
 
   @IsDateString({}, {message: CreateOfferMessages.date.invalidFormat})
-    public date!: Date;
+  public date!: Date;
 
   @IsString({message: CreateOfferMessages.city.invalidFormat})
-    public city!: City;
+  public city!: City;
 
   @IsString({message: CreateOfferMessages.previewImg.invalidFormat})
   public previewImg!: string;
 
   @IsArray({message: CreateOfferMessages.images.invalidFormat})
-    public images!: string[];
+  public images!: string[];
 
   @IsBoolean({message: CreateOfferMessages.flagIsPremium.invalidFormat})
-    public flagIsPremium!: boolean;
+  public flagIsPremium!: boolean;
 
   @IsBoolean({message: CreateOfferMessages.flagIsFavourites.invalidFormat})
-    public flagIsFavourites!: boolean;
+  public flagIsFavourites!: boolean;
 
   @IsNumber({}, {message: CreateOfferMessages.rating.invalidFormat})
-    public rating!: 1 | 2 | 3 | 4 | 5;
+  public rating!: 1 | 2 | 3 | 4 | 5;
 
   @IsString({message: CreateOfferMessages.housing.invalidFormat})
-    public housing!: Housing;
+  public housing!: Housing;
 
   @IsInt({message: CreateOfferMessages.countRooms.invalidFormat})
-    public countRooms!: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+  public countRooms!: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
   @IsInt({message: CreateOfferMessages.countPeople.invalidFormat})
-    public countPeople!: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+  public countPeople!: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
   @IsNumber({}, {message: CreateOfferMessages.price.invalidFormat})
-    public price!: number;
+  public price!: number;
 
   @IsString({message: CreateOfferMessages.conveniences.invalidFormat})
     conveniences!: Conveniences;
@@ -61,7 +61,7 @@ export default class CreateOfferDto {
   public userId!: string;
 
   public countComments!: number;
-  
+
   @IsArray({message: CreateOfferMessages.coordinates.invalidFormat})
   public coordinates!: number[];
 }
